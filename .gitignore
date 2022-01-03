@@ -11,3 +11,9 @@ venv/
 
 # Test results
 test_results/
+
+# Pycharm
+.idea/
+
+# log files
+*.log
