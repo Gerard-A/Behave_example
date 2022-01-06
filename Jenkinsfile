@@ -22,6 +22,7 @@ pipeline {
             }
             post {
                 always {
+                    junit 'test_results/*.xml'
                     script {
                          allure([
                              includeProperties: false,
