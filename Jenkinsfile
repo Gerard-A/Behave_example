@@ -19,8 +19,11 @@ pipeline {
                    runTest.bat
                 """
                 echo 'Finished Behave Tests'
-            }  finally {
-            junit 'test_results/*.xml'  // (1)
+            }
+            post {
+                always {
+                    junit 'test_results/*.xml'
+                }
             }
         }
     }
