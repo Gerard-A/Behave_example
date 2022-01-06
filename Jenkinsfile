@@ -23,6 +23,15 @@ pipeline {
             post {
                 always {
                     junit 'test_results/*.xml'
+                    script {
+                         allure([
+                             includeProperties: false,
+                             jdk: '',
+                             properties: [],
+                             reportBuildPolicy: 'ALWAYS',
+                             results: [[path: 'test_results/allure']]
+                         ])
+                    }
                 }
             }
         }
